@@ -1,6 +1,5 @@
 "use strict";
 // this keyword
-
 console.log(this);
  
 function greet(){
@@ -17,7 +16,7 @@ const obj={
 };
 obj.x();
 
-// call , apply , bind function
+// call, apply, bind function
 
 let person={
     firstname:"yuva",
@@ -45,3 +44,23 @@ fullname.apply(person,["hi","hello"]);
 // bind function
 let info=name.bind(person2);
 info();
+
+// currying function using bind and closure
+// using closure
+function multiply(x){
+   return function mul(y){
+        console.log(x*y);
+    }
+}
+let mulcall=multiply(3);
+mulcall(2);
+
+let mulcall1=multiply(5);
+mulcall1(2);
+
+// using bind
+function add(a,b){
+ console.log(a+b);
+}
+let addcall=add.bind(this,3,9);
+addcall();
