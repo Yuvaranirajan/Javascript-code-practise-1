@@ -64,3 +64,19 @@ function add(a,b){
 }
 let addcall=add.bind(this,3,9);
 addcall();
+
+// prototype
+let prototp={
+   x:10,
+   y:"hi"
+};
+
+let a={
+    __proto__:prototp,
+    z:5,
+}
+console.log(a.x);
+console.log(a.z);
+prototp.y="hello";
+console.log(a.y);
+console.log(prototp.y);
